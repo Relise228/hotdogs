@@ -1,12 +1,21 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const { Client } = require('pg');
+const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.static(path.join(__dirname, 'build')));
+
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -24,7 +33,7 @@ const client = new Client({
 })
 client.connect();
 
-app.get('/', async (req, res) => {
+app.get('/hotdog', async (req, res) => {
     client.query('SELECT * FROM hotdogs ORDER BY id', (err, resp) => {
         res.send(resp.rows);
     })

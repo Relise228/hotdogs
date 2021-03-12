@@ -5,7 +5,7 @@ const instance = axios.create({
 })
 
 export const hotAPI = {
-    getHotDogs: () => instance.get('').then(response => response.data),
+    getHotDogs: () => instance.get('/hotdog').then(response => response.data),
     updateHotDog: (id, img, name, price, description) => instance.post('hotdog/update', {
         id, img, name, price, description
     }).then(response => response.data),
