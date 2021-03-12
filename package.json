@@ -1,0 +1,20 @@
+{
+  "name": "hotdog",
+  "version": "1.0.0",
+  "scripts": {
+    "client": "cd client && npm start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"db-migrate up --confing ./database.json\" \"yarn server\" \"yarn client\"",
+    "db_down": "db-migrate down --confing ./database.json"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "db-migrate": "^0.11.12",
+    "db-migrate-pg": "^1.2.2",
+    "express": "^4.16.4",
+    "pg-promise": "^10.9.4"
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1"
+  }
+}

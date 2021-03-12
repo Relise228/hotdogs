@@ -1,0 +1,4 @@
+{
+  "defaultEnv": "other",
+  "other": "postgres://qzyrccur:kKDUzbS5vdmTX9Xp8zadK8omuEFTa22X@ziggy.db.elephantsql.com:5432/qzyrccur"
+}

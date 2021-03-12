@@ -1,0 +1,39 @@
+.card{
+    margin-top: 30px;
+    margin-right: 10px;
+    flex-grow: 0;
+    width: 280px;
+}
+.imgWrapper{
+    width: 280px;
+}
+.img {
+   width: 100%;
+   height: 280px;
+   object-fit: cover;
+}
+.name{
+    font-weight: bold;
+    font-size: 18px;
+    margin: 10px 0;
+}
+.price{
+    margin-bottom: 10px;
+    opacity: 0.5;
+}
+.description{
+    max-width: 280px;
+    margin-bottom: 15px;
+}
+
+.buttonWrapper {
+    max-width: 280px;
+}
+
+.buttonEdit {
+    width: 100%;
+    height: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
