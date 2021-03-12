@@ -6,7 +6,7 @@
     "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"db-migrate up --confing ./database.json\" \"yarn server\" \"yarn client\"",
     "db_down": "db-migrate down --confing ./database.json",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
 
   },
   "dependencies": {
